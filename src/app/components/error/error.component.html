@@ -1,0 +1,8 @@
+<div class="card text-justify" *ngIf="errors.length > 0">
+  <div class="card-header">Corrigez les erreurs suivantes</div>
+  <div class="card-body">
+    <ul>
+      <li *ngFor="let error of errors">{{ error.message }}</li>
+    </ul>
+  </div>
+</div>
