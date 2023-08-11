@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RadioComponent } from './radio.component';
+import { RecapComponent } from './recap.component';
 
-describe('RadioComponent', () => {
-  let component: RadioComponent;
-  let fixture: ComponentFixture<RadioComponent>;
+describe('RecapComponent', () => {
+  let component: RecapComponent;
+  let fixture: ComponentFixture<RecapComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ RadioComponent ]
+      declarations: [ RecapComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(RadioComponent);
+    fixture = TestBed.createComponent(RecapComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -21,11 +21,17 @@ import { MdbTooltipModule } from 'mdb-angular-ui-kit/tooltip';
 import { MdbValidationModule } from 'mdb-angular-ui-kit/validation';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TitleComponent } from './components/title/title.component';
+import { FormComponent } from './components/form/form.component';
+import { ErrorComponent } from './components/error/error.component';
+import { RecapComponent } from './components/recap/recap.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TitleComponent
+    TitleComponent,
+    FormComponent,
+    ErrorComponent,
+    RecapComponent,
   ],
   imports: [
     BrowserModule,

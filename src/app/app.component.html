@@ -1,6 +1,11 @@
 <div class="container-lg my-container">
   <app-title class="text-center"></app-title>
+  <app-error></app-error>
   <div class="mt-10">
     <h4>Qui êtes vous ?</h4>
+    <app-form (formValue)="getFormValue($event)" (formValid)="getFormValid($event)"></app-form>
+    <hr class="hr mt-20" />
+    <button class="btn btn-primary" mdbRipple [disabled]="isPreValidate" (click)="preValidate()">Pré-valider</button>
   </div>
+  <app-recap class="mt-20" (enable)="getButtonIsEnable($event)"></app-recap>
 </div>
