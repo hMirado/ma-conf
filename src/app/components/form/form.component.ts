@@ -12,7 +12,8 @@ export class FormComponent implements OnInit, OnDestroy {
   @Output() formValue = new EventEmitter<any>();
   @Output() formValid = new EventEmitter<boolean>();
   public form!: FormGroup;
-  private subscription = new Subscription()
+  private subscription = new Subscription();
+  public isDisabled: boolean = false;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -23,6 +24,8 @@ export class FormComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.formValueChange();
+    this.getFormIsDisabled();
+    this.getNewRegistration();
   }
 
   ngOnDestroy(): void {
@@ -34,7 +37,7 @@ export class FormComponent implements OnInit, OnDestroy {
       {
         fName: ['', Validators.required],
         lName: ['', Validators.required],
-        email: ['', [Validators.required, Validators.pattern(/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/)]],
+        email: ['', [Validators.required, Validators.pattern(/\S+@\S+\.\S+/)]],
         gender: ['men', Validators.required],
         institut: ['', Validators.required],
         address: ['', Validators.required],
@@ -51,20 +54,29 @@ export class FormComponent implements OnInit, OnDestroy {
 
   formValueChange(): void {
     this.form.valueChanges.pipe(
-      debounceTime(1000)
+      debounceTime(500)
     ).subscribe((value: any) => {
       this.formValue.emit(value);
       this.formValid.emit(this.form.valid);
     })
   }
 
-  public isDisabled: boolean = false;
   getFormIsDisabled(): void {
     this.subscription.add(
       this.formService.getFormIsDisabled().pipe(
         filter(value => value != undefined && value != null)
-      ).subscribe((value: boolean) => {
-        this.isDisabled = value
+      ).subscribe((value: boolean) => this.isDisabled = value)
+    )
+  }
+
+  getNewRegistration() {
+    this.subscription.add(
+      this.formService.getNewRegistration().subscribe((value: boolean) => {
+        this.isDisabled = false;
+        this.form.reset();
+        this.form.patchValue(
+          {gender: 'men'}
+        )
       })
     )
   }

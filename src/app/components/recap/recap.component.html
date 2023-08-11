@@ -1,0 +1,24 @@
+<div class="card text-justify" *ngIf="recap">
+  <div class="card-header">Récapitulatif de l'inscription</div>
+  <div class="card-body">
+    <p>Bonjour {{ recap.gender }} {{ recap.name }}, vous avez procédé à une inscription pour la conférence #MaCon2020.</p>
+    <p>Les détails de votre enregistrement est le suivant :</p>
+    <ul>
+      <li>{{ recap.registrationType }} {{ recap.registrationPrice }} EUR</li>
+      <li>{{ recap.hosting }} {{ recap.hostingPrice }} EUR</li>
+    </ul>
+    <p>
+      Un email vous sera envoyé prochainement à cette addresse {{ recap.email }} pour la mise à en paiement de votre inscription.
+      Merci de consulter votre messagerie et de procéder au réglement de votre inscription.
+    </p>
+    <p>En vous remerciant de votre inscription, à très bientôt à la conférence #MaConf2020.</p>
+    <div class="btn-toolbar" role="toolbar">
+      <div class="btn-group me-2" role="group">
+        <button class="btn btn-primary" mdbRipple (click)="newRegistration()">Confirmer</button>
+      </div>
+      <div class="btn-group me-2" role="group">
+        <button class="btn btn-primary" mdbRipple (click)="updateData()">Modifier les données</button>
+      </div>
+    </div>
+  </div>
+</div>

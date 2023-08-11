@@ -24,11 +24,7 @@ export class ErrorComponent implements OnInit {
 
   getError(): void {
     this.subscription.add(
-      this.formService.getFormError().subscribe((value: ErrorMessage[]) => {
-        this.errors = value
-        console.log(value);
-        
-      })
+      this.formService.getFormError().subscribe((value: ErrorMessage[]) => this.errors = value)
     )
   }
 }

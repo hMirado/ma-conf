@@ -23,6 +23,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TitleComponent } from './components/title/title.component';
 import { FormComponent } from './components/form/form.component';
 import { ErrorComponent } from './components/error/error.component';
+import { RecapComponent } from './components/recap/recap.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { ErrorComponent } from './components/error/error.component';
     TitleComponent,
     FormComponent,
     ErrorComponent,
+    RecapComponent,
   ],
   imports: [
     BrowserModule,

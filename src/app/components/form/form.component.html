@@ -2,21 +2,21 @@
   <div class="row mt-20">
     <div class="col-md-6">
       <mdb-form-control>
-        <input mdbInput type="text" id="typeText" class="form-control" formControlName="fName"/>
-        <label mdbLabel class="form-label" for="typeText">Prénom *</label>
+        <input mdbInput type="text" id="lName" class="form-control" formControlName="fName" [attr.disabled]="isDisabled ? '' : null"/>
+        <label mdbLabel class="form-label" for="lName">Prénom *</label>
       </mdb-form-control>
     </div>
     <div class="col-md-6">
       <mdb-form-control>
-        <input mdbInput type="text" id="typeText" class="form-control" formControlName="lName"/>
-        <label mdbLabel class="form-label" for="typeText">Nom *</label>
+        <input mdbInput type="text" id="lName" class="form-control" formControlName="lName" [attr.disabled]="isDisabled ? '' : null"/>
+        <label mdbLabel class="form-label" for="lName">Nom *</label>
       </mdb-form-control>
     </div>
   </div>
   <div class="row mt-20">
     <div class="col-md-12">
       <mdb-form-control>
-        <input mdbInput type="email" id="typeText" class="form-control" formControlName="email"/>
+        <input mdbInput type="email" id="typeText" class="form-control" formControlName="email" [attr.disabled]="isDisabled ? '' : null"/>
         <label mdbLabel class="form-label" for="typeText">Email address *</label>
       </mdb-form-control>
     </div>
@@ -34,6 +34,7 @@
           formControlName="gender"
           value="men"
           [checked]="true"
+          [attr.disabled]="isDisabled ? '' : null"
         />
         <label class="form-check-label" for="men"> Je suis un homme </label>
       </div>
@@ -47,6 +48,7 @@
           id="women"
           formControlName="gender"
           value="women"
+          [attr.disabled]="isDisabled ? '' : null"
         />
         <label class="form-check-label" for="women"> Je suis une femme </label>
       </div>
@@ -55,50 +57,50 @@
   <div class="row mt-20">
     <div class="col-md-12">
       <mdb-form-control>
-        <input mdbInput type="email" id="typeText" class="form-control" formControlName="institut"/>
-        <label mdbLabel class="form-label" for="typeText">Institution *</label>
+        <input mdbInput type="email" id="institut" class="form-control" formControlName="institut" [attr.disabled]="isDisabled ? '' : null"/>
+        <label mdbLabel class="form-label" for="institut">Institution *</label>
       </mdb-form-control>
     </div>
   </div>
   <div class="row mt-20">
     <div class="col-md-6">
       <mdb-form-control>
-        <input mdbInput type="text" id="typeText" class="form-control" formControlName="address"/>
-        <label mdbLabel class="form-label" for="typeText">Address *</label>
+        <input mdbInput type="text" id="address" class="form-control" formControlName="address" [attr.disabled]="isDisabled ? '' : null"/>
+        <label mdbLabel class="form-label" for="address">Address *</label>
       </mdb-form-control>
     </div>
     <div class="col-md-6">
       <mdb-form-control>
-        <input mdbInput type="text" id="typeText" class="form-control" formControlName="country"/>
-        <label mdbLabel class="form-label" for="typeText">Pays *</label>
-      </mdb-form-control>
-    </div>
-  </div>
-  <div class="row mt-20">
-    <div class="col-md-6">
-      <mdb-form-control>
-        <input mdbInput type="text" id="typeText" class="form-control" formControlName="postalCode"/>
-        <label mdbLabel class="form-label" for="typeText">Code Postal *</label>
-      </mdb-form-control>
-    </div>
-    <div class="col-md-6">
-      <mdb-form-control>
-        <input mdbInput type="text" id="typeText" class="form-control" formControlName="city"/>
-        <label mdbLabel class="form-label" for="typeText">Vile *</label>
+        <input mdbInput type="text" id="country" class="form-control" formControlName="country" [attr.disabled]="isDisabled ? '' : null"/>
+        <label mdbLabel class="form-label" for="country">Pays *</label>
       </mdb-form-control>
     </div>
   </div>
   <div class="row mt-20">
     <div class="col-md-6">
       <mdb-form-control>
-        <input mdbInput type="text" id="typeText" class="form-control" formControlName="postalCode"/>
-        <label mdbLabel class="form-label" for="typeText">Page web personnelle</label>
+        <input mdbInput type="text" id="postalCode" class="form-control" formControlName="postalCode" [attr.disabled]="isDisabled ? '' : null"/>
+        <label mdbLabel class="form-label" for="postalCode">Code Postal *</label>
       </mdb-form-control>
     </div>
     <div class="col-md-6">
       <mdb-form-control>
-        <input mdbInput type="text" id="typeText" class="form-control" formControlName="city"/>
-        <label mdbLabel class="form-label" for="typeText">Page web institution</label>
+        <input mdbInput type="text" id="city" class="form-control" formControlName="city" [attr.disabled]="isDisabled ? '' : null"/>
+        <label mdbLabel class="form-label" for="city">Vile *</label>
+      </mdb-form-control>
+    </div>
+  </div>
+  <div class="row mt-20">
+    <div class="col-md-6">
+      <mdb-form-control>
+        <input mdbInput type="text" id="personalWeb" class="form-control" formControlName="personalWeb" [attr.disabled]="isDisabled ? '' : null"/>
+        <label mdbLabel class="form-label" for="personalWeb">Page web personnelle</label>
+      </mdb-form-control>
+    </div>
+    <div class="col-md-6">
+      <mdb-form-control>
+        <input mdbInput type="text" id="institutWeb" class="form-control" formControlName="institutWeb" [attr.disabled]="isDisabled ? '' : null"/>
+        <label mdbLabel class="form-label" for="institutWeb">Page web institution</label>
       </mdb-form-control>
     </div>
   </div>
@@ -115,6 +117,7 @@
           id="student"
           formControlName="registration"
           value="student"
+          [attr.disabled]="isDisabled ? '' : null"
         />
         <label class="form-check-label" for="student"> Etudiant (150 €) </label>
       </div>
@@ -127,6 +130,7 @@
           id="academy"
           formControlName="registration"
           value="academy"
+          [attr.disabled]="isDisabled ? '' : null"
         />
         <label class="form-check-label" for="academy"> Académique (200 €) </label>
       </div>
@@ -139,6 +143,7 @@
           id="enterprise"
           formControlName="registration"
           value="enterprise"
+          [attr.disabled]="isDisabled ? '' : null"
         />
         <label class="form-check-label" for="enterprise"> Entreprise (300 €) </label>
       </div>
@@ -157,6 +162,7 @@
           id="with"
           formControlName="hosting"
           value="true"
+          [attr.disabled]="isDisabled ? '' : null"
         />
         <label class="form-check-label" for="with"> Avec réservation(150 €) </label>
       </div>
@@ -169,8 +175,9 @@
           id="withOut"
           formControlName="hosting"
           value="false"
+          [attr.disabled]="isDisabled ? '' : null"
         />
-        <label class="form-check-label" for="withOut"> Avec réservation(0 €) </label>
+        <label class="form-check-label" for="withOut"> Sans réservation(0 €) </label>
       </div>
     </div>
   </div>
